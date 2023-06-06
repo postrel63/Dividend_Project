@@ -26,6 +26,9 @@ spring:
     host: localhost
     port: 6379
 
+  jwt:
+    secret: ZGl2aWRlbmQtcHJvamVjdC1wb3N0cmVsCg==
+
 
 scheduler:
   scrap:

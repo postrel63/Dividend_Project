@@ -4,6 +4,7 @@ import com.example.dividend.persist.entity.DividendEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -17,5 +18,7 @@ public interface DividendRepository extends JpaRepository<DividendEntity, Long> 
     // 주민등록번호같이 중복이 없으면 인덱스 효과 O (카디널리티 높음)
     boolean existsByCompanyIdAndDate(Long companyId, LocalDateTime date);
 
+    @Transactional
+    void deleteAllByCompanyId(Long id);
 
 }
